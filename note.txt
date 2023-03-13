@@ -78,7 +78,7 @@ html  - view
 
     1.2.1 - event binding (event_name)="method()"   eg - onclick
     1.2.2 - $event binding (event_name)="method($event)" - $event bining use when accessing data while the event is happening
-    1.2.3 - event binding with template rendering variable #variablemname
+    1.2.3 - event binding with template rendering variable #variableName (# is used as template rendering variable)
 
 2. Two Way Binding (data can share both from ts to html and html to ts) 
 ------------------
