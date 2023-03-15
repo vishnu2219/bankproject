@@ -15,6 +15,11 @@ project creation
 ----------------
 ng new projectname
 
+create new component 
+--------------------
+ng genenrate component componenr_name
+ng n c first
+
 running cmd
 -----------
 ng serve --open
@@ -45,10 +50,6 @@ module      - is a file mananage all the components which is a typescript file (
 components  - iinside the component - ts html css
 selector    - used to dispaly the component by calling it 
 
-create new component 
---------------------
-ng genenrate component componenr_name
-ng n c first
 
 03.03.2023
 
@@ -80,10 +81,13 @@ html  - view
     1.2.2 - $event binding (event_name)="method($event)" - $event bining use when accessing data while the event is happening
     1.2.3 - event binding with template rendering variable #variableName (# is used as template rendering variable)
 
+06.03.2023
+---------
+
 2. Two Way Binding (data can share both from ts to html and html to ts) 
 ------------------
 
-    2.1 ngmodel [(ngmodel)]="variable"
+    2.1 ngmodel [(ngmodel)]="variable"      (this is the method used for two wayy binding)
     
         - FormsModule - module used to apply ngmodel
 
@@ -102,21 +106,40 @@ redirection in angular
 method - navigateByUrl(path)
 class  - Router 
 
-folder - file - class - method
-folder - package 
-file   - module  
+folder -> file -> class -> method
+
+folder name - package 
+file name   - module
+class       - Router
+module      - AppRoutingModule  
 
 Dependency injecton
 -------------------
-
 to use a method of class in another class (we can use inheritance in this case)
 
-in constructor
+in constructor - dependency injection use in constructor
 
-    accessSpecifier referance:Classname
+How to use Dependency Injcetion
+-------------------------------
+1 -    accessSpecifier referance:Classname   - using dependency injection inside the constructor
 
     access specifier - public / private
         -private - only can use in sepcific folder or file which containing the code 
-        -public  - can declare in the main file or folder which containing the code  
+        -public  - can declare in the main file or folder which containing the code 
+        -private - can use the injection only in that class
+        -public  - can use the injection class in other classes of that file 
 
 
+08.03.2023
+----------
+all other file can acess data from service file
+Angular services
+----------------
+1   - its a file in angular
+2   - all component can access the content of service file
+
+creating service file
+---------------------
+    ng generate service file name
+
+    ng g s filename
