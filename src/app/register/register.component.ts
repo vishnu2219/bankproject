@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class RegisterComponent {
   uname: any
   psw: any
 
-  constructor(private ds: DataService) { } //injecting another class in another class
+  constructor(private ds: DataService,private router:Router) { } //injecting another class in another class
 
   ngOnInit(): void { }
 
@@ -25,6 +26,7 @@ export class RegisterComponent {
     const result = this.ds.register(acno, uname, psw)
     if (result) {
       alert("registerd successfully")
+      this.router.navigateByUrl("")
     }
     else {
       alert("user already exist")

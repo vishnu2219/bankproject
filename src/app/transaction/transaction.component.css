@@ -1,14 +1,21 @@
+th{
+    border: 0cap;
+    font-variant-caps: all-small-caps;
+
+}
 
 h3{
     font-variant-caps: all-small-caps;
 }
-
-input{
-    font-variant-caps: all-small-caps;
- }
-
- button{
+tr{
     font-variant-caps: all-small-caps;
 
- }
+}
+th{
+    font-variant-caps: all-small-caps;
 
+}
+
+hd{    
+    font-variant-caps: all-small-caps;
+}

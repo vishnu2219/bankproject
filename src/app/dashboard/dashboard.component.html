@@ -1,1 +1,62 @@
-<p>dashboard works!</p>
+<h3>welcome {{user}}</h3>
+
+<div class="mt-5 text-center container">
+    <a style="border-radius: 10px; color: blue; background-color: aliceblue; border: radius 10px;;" class="mt-2 ms-2 p-1 p-1 w-50 container border" href="/transaction">view transaction details</a>
+</div>
+
+
+<div class="row">
+    <div class="col 6">
+        <form style="background-color: rgba(148, 148, 148, 0.693); border-radius: 20px;" action=""
+    class="mt-3 p-3 w-50 container border">
+
+    <h3 class="text-center text-white">deposit</h3>
+
+    <div>
+        <input [(ngModel)]="acno" name=acno id="ac1" class="form-control mt-3 p-2 border font-variant-caps" type="text"
+            placeholder="account number">
+    </div>
+
+    <div>
+        <input [(ngModel)]="psw" name="password" id="p1" class="form-control mt-3 p-2 border font-variant-caps " type="password"
+            placeholder="enter password">
+    </div>
+    <div>
+        <input [(ngModel)]="amnt" name=amnt id="a1" class="form-control mt-3 p-2 border font-variant-caps" type="text"
+            placeholder="amount">
+    </div>
+
+
+    <div (click)="deposit()" class="d-grid col-5 mt-3 mx-auto">
+        <button class="btn btn-primary" type="button">deposit</button>
+    </div>
+</form>
+    </div>
+    <div class="col 6">
+        <form style="background-color: rgba(148, 148, 148, 0.693); border-radius: 20px;" action=""
+    class="mt-3 p-3 w-50 container border">
+    
+    <h3 class="text-center text-white">withdraw</h3>
+
+    <div>
+        <input [(ngModel)]="acno1" name=acno id="ac2" class="form-control mt-3 p-2 border font-variant-caps" type="text"
+            placeholder="account number">
+    </div>
+
+    <div>
+        <input [(ngModel)]="psw1" name="password" id="p2" class="form-control mt-3 p-2 border font-variant-caps " type="password"
+            placeholder="enter password">
+    </div>
+    <div>
+        <input [(ngModel)]="amnt1" name=amnt id="a2" class="form-control mt-3 p-2 border font-variant-caps" type="text"
+            placeholder="amount">
+    </div>
+
+
+    <div class="d-grid col-5 mt-3 mx-auto">
+        <button (click)="withdraw()" class="btn btn-primary" type="button">withdraw</button>
+    </div>
+</form>
+    </div>
+</div>
+

@@ -43,23 +43,13 @@ export class LoginComponent {
     // alert("login success")
     var acnum=this.acno
     var psw=this.psw
-    var userDetails=this.ds.userDetails
-    if(acnum in userDetails){
-      if(psw==userDetails [acnum]["password"]){
-        alert('login success')
-
-        //REDIRECTION
-
-    this.router.navigateByUrl("dashboard")   
-    
-        
-      }
-      else{
-        alert('incorrect password')
-      }
+    const result=this.ds.login(acnum,psw)
+    if(result){
+      alert("login success")
+      this.router.navigateByUrl("dashboard")
     }
     else{
-      alert("incorrect username")
+      alert("incorrect acno or password")
     }
   }
 }
