@@ -1,22 +1,20 @@
 
-<h3 class="text-center text-white mt-5 ">TRANSACTION HISTORY</h3>
-<div class="container w-50 mt-3 p-3 text-center border mt-2 p-3" style="border-radius: 11px; background-color:rgb(115, 130, 206); border: none;">
-<table class="text-center w-100 text-white fs-5">
+<h3 class="mt-5 text-center text-white">transaction histroy</h3>
+<div class="container w-50 text-center border p-3 mt-2" style="border-radius: 20px; background-color: rgba(65, 126, 101, 0.385);">
+
+<table class="text-center w-100 text-white fs-4">
     <thead>
         <tr>
             <th class="border">TYPE</th>
             <th class="border">AMOUNT</th>
         </tr>
     </thead>
-    <tbody>
-        <tr>
-            <td class="border">Credit</td>
-            <td class="border">500</td>
-        </tr>
-        <tr>
-            <td class="border">Debit</td>
-            <td class="border">500</td>
+    <tbody class="p-3 border">
+        <tr *ngFor="let i of transactionArray">                                       
+            <td class="border">{{i.Type}}</td>
+            <td class="border">{{i.Amount}}</td>
         </tr>
     </tbody>
 </table>
+
 </div>

@@ -41,7 +41,7 @@ export class DashboardComponent {
     }
   }
 
-  withdraw() {
+  withdraw(): void {
     var acno = this.acno1
     var psw = this.psw1
     var amnt = this.amnt1

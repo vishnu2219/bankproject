@@ -143,3 +143,48 @@ creating service file
     ng generate service file name
 
     ng g s filename
+
+
+14.03.2023
+----------
+ANGULAR DIRECTIVES
+------------------
+used to manipulate DOM (documnet object model)
+
+1 - component directive
+    eg - creating new component
+
+2 - structural directives
+    - *ngFor
+    eg - array,object (taking datas from array to the component)
+
+3 -     
+
+Form Validation In Angular
+--------------------------
+
+form creation in Angular
+------------------------
+
+    1.template driven form
+    2.model driven form
+
+creating model driven form (steps)
+-----------------------------------
+    class - FormBuilder class used for build model form
+1.reactive form (used for creating model driven form)
+
+    -reactiveFormsModule (helps for creating model driven form using reacive form)
+
+    -[module used to build model form]
+
+a model containing
+-------------------
+
+    -form group
+    -array
+    -controller
+
+
+
+

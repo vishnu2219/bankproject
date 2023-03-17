@@ -9,14 +9,12 @@ import { DataService } from '../services/data.service';
 export class TransactionComponent {
 
   transactionArray:any
-  constructor(private ds: DataService) {
 
-    this.transactionArray = this.ds.getTransaction(this.ds.curretAcno)
+  constructor(private ds:DataService){
 
-    console.log(this.transactionArray);
-    
+   this.transactionArray = this.ds.getTransaction(this.ds.currentAcno)
+   console.log(this.transactionArray);
+   
   }
-
-  ngOnInit(): void { }
 
 }

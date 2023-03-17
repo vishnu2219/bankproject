@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,12 +15,13 @@ import { TransactionComponent } from './transaction/transaction.component';
     LoginComponent,
     DashboardComponent,
     RegisterComponent,
-    TransactionComponent
+    TransactionComponent,
   ],
   imports: [
     BrowserModule, // module used for browsing 
     AppRoutingModule,  //redirection
-    FormsModule // used for two way binding its external module
+    FormsModule, // used for two way binding its external module
+    ReactiveFormsModule //form validation
   ],
   providers: [],
   bootstrap: [AppComponent]

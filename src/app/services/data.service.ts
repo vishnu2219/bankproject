@@ -5,14 +5,14 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
-  //defining variable
+  //defining or initializing variable
   currentUser: any
-  curretAcno:any
+  currentAcno: any
 
   userDetails: any = {
-    1003: { username: "manil", acno: 1003, password: "manil33", balance: 0, transaction: [] },
-    1006: { username: "chugesh", acno: 1006, password: "chugesh66", balance: 0, transaction: [] },
-    1009: { username: "raresh", acno: 1009, password: "raresh99", balance: 0, transaction: [] }
+    1003: { username: "manil", acno: 1003, password: "m", balance: 0, transaction: [] },
+    1006: { username: "chugesh", acno: 1006, password: "c", balance: 0, transaction: [] },
+    1009: { username: "raresh", acno: 1009, password: "r", balance: 0, transaction: [] }
   }
 
 
@@ -37,9 +37,13 @@ export class DataService {
     var userDetails = this.userDetails
     if (acno in userDetails) {
       if (psw == userDetails[acno]["password"]) {
+       
         //stroning currentUser
+        
         this.currentUser = userDetails[acno]["username"]
-        this.curretAcno=acno
+        
+        this.currentAcno=acno
+
         return true
       }
       else {
@@ -61,13 +65,8 @@ export class DataService {
         console.log(userDetails);
 
         //add transaction data
-        userDetails[acno]["transaction"].push(
-          {
-            Type:"Credit",
-            Amount:amount
-          }
-        )
-
+        userDetails[acno]["transaction"].push({Type:"Credit",Amount:amount})
+         
         return userDetails[acno]["balance"]
       }
       else {
@@ -87,16 +86,13 @@ export class DataService {
       if (psw == userDetails[acno]["password"]) {
         if (amount <= userDetails[acno]["balance"]) {
           userDetails[acno]["balance"] -= amount
-          console.log(userDetails);
+
+          //console.log(userDetails);
 
           //add transaction data          13.3.2023
-          userDetails[acno]["transaction"].push(
-            {
-              Type:"Debit",
-              Amount:amount
-            }
-          )
-            console.log(userDetails);
+          userDetails[acno]["transaction"].push({Type:"Debit",Amount:amount})
+            
+          // console.log(userDetails);
             
           return userDetails[acno]["balance"]
         }
