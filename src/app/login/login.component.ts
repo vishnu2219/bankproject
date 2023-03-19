@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -15,8 +16,8 @@ export class LoginComponent {
 
 
   // varaible decleration and initialization
-  acno: any //data comming from login component.html
-  psw: any
+  // acno: any //data comming from login component.html
+  // psw: any
 
 
   // userDetails: any = {
@@ -29,8 +30,13 @@ export class LoginComponent {
 
   //dependency injection inside the constructor
   
-  constructor(private router:Router,private ds:DataService) { }
+  constructor(private router:Router,private ds:DataService,private fb:FormBuilder) { }
 
+  //model
+  loginForm=this.fb.group({
+    acno:['',[Validators.required,Validators.pattern('[0-9]+')]],
+    psw:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]]
+  })
   
   ngOnInit(): void {
 
@@ -41,9 +47,10 @@ export class LoginComponent {
   // normal event binding
   login(){
     // alert("login success")
-    var acnum=this.acno
-    var psw=this.psw
-    const result=this.ds.login(acnum,psw)
+    var acnum=this.loginForm.value.acno
+    var psw=this.loginForm.value.psw
+    if(this.loginForm.valid){
+      const result=this.ds.login(acnum,psw)
     if(result){
       alert("login success")
       this.router.navigateByUrl("dashboard")
@@ -52,6 +59,11 @@ export class LoginComponent {
       alert("incorrect acno or password")
     }
   }
+  else{
+    alert("invalid form")
+  }
+    }
+    
 }
   // hai(){
   //   alert('nthadad njettityo')

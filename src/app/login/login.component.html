@@ -7,14 +7,23 @@
 
 <h1 class=" text-center mt-5" style="color:rgb(244, 244, 244); font-variant-caps: all-petite-caps;">SIGN IN</h1>
 
-<form (ngSubmit)="login()" style="background-color: rgba(148, 148, 148, 0.693); border-radius: 20px;" action=""
+<form [formGroup]="loginForm" (ngSubmit)="login()" style="background-color: rgba(148, 148, 148, 0.693); border-radius: 20px;" action=""
     class="mt-3 p-3 w-50 container border">
 
     <div>
-        <input [(ngModel)]="acno" name=uname id="u1" class="form-control mt-3 p-2 border font-variant-caps" type="text" [placeholder]="data1">
+        <input formControlName="acno" name=uname id="u1" class="form-control mt-3 p-2 border font-variant-caps" type="text" [placeholder]="data1">
     </div>
+
+    <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched"  class="text-start ms-2 mt-2">
+        <p class="text-danger ms-2 mt-2 text-starts">includes numbers only</p>
+    </div>
+
     <div>
-        <input [(ngModel)]="psw" name="pname" id="p1" class="form-control mt-3 p-2 border font-variant-caps " type="password" [placeholder]="data2">
+        <input formControlName="psw" name="pname" id="p1" class="form-control mt-3 p-2 border font-variant-caps " type="password" [placeholder]="data2">
+    </div>
+
+    <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+        <p class="text-danger text-starts mt-2 ms-2">contain only numbers and characters</p>
     </div>
 
     <div class="d-grid col-1 mt-3 mx-auto">

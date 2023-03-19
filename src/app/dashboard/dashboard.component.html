@@ -8,51 +8,79 @@
 
 <div class="row">
     <div class="col 6">
-        <form style="background-color: rgba(148, 148, 148, 0.693); border-radius: 20px;" action=""
+        <form [formGroup]="depositForm" style="background-color: rgba(148, 148, 148, 0.693); border-radius: 20px;" action=""
     class="mt-3 p-3 w-50 container border">
 
     <h3 class="text-center text-white">deposit</h3>
 
     <div>
-        <input [(ngModel)]="acno" name=acno id="ac1" class="form-control mt-3 p-2 border font-variant-caps" type="text"
+        <input formControlName="acno" name=acno id="ac1" class="form-control mt-3 p-2 border font-variant-caps" type="text"
             placeholder="account number">
     </div>
 
+    <div *ngIf="this.depositForm.get('acno')?.errors && this.depositForm.get('acno')?.touched" class="text-start ms-2 mt-2">
+        <p class="text-danger">includes numbers only</p>
+    </div>
+
     <div>
-        <input [(ngModel)]="psw" name="password" id="p1" class="form-control mt-3 p-2 border font-variant-caps " type="password"
+        <input formArrayName="psw" name="password" id="p1" class="form-control mt-3 p-2 border font-variant-caps " type="password"
             placeholder="enter password">
     </div>
+
+    <div *ngIf="this.depositForm.get('psw')?.errors && this.depositForm.get('psw')?.touched" class="text-start ms-2 mt-2">
+        <p class="text-danger">includes numbers and char only</p>
+    </div>
+
     <div>
-        <input [(ngModel)]="amnt" name=amnt id="a1" class="form-control mt-3 p-2 border font-variant-caps" type="text"
+        <input formControlName="amnt" name=amnt id="a1" class="form-control mt-3 p-2 border font-variant-caps" type="text"
             placeholder="amount">
     </div>
 
+    <div *ngIf="this.depositForm.get('amnt')?.errors && this.depositForm.get('amnt')?.touched" class="text-start ms-2 mt-2">
+        <p class="text-danger">includes numbers only</p>
+    </div>
 
     <div (click)="deposit()" class="d-grid col-5 mt-3 mx-auto">
         <button class="btn btn-primary" type="button">deposit</button>
     </div>
 </form>
     </div>
+
+                                        <!-- withdraw starts -->
+
     <div class="col 6">
-        <form style="background-color: rgba(148, 148, 148, 0.693); border-radius: 20px;" action=""
+
+    <form [formGroup]="withdrawForm" style="background-color: rgba(148, 148, 148, 0.693); border-radius: 20px;" action=""
     class="mt-3 p-3 w-50 container border">
     
     <h3 class="text-center text-white">withdraw</h3>
 
     <div>
-        <input [(ngModel)]="acno1" name=acno id="ac2" class="form-control mt-3 p-2 border font-variant-caps" type="text"
+        <input formControlName="acno1" name=acno id="ac2" class="form-control mt-3 p-2 border font-variant-caps" type="text"
             placeholder="account number">
     </div>
 
+    <div *ngIf="this.withdrawForm.get('acno1')?.errors && this.withdrawForm.get('acno1')?.touched" class="text-start ms-2 mt-2">
+        <p class="text-danger">includes numbers only</p>
+    </div>
+
     <div>
-        <input [(ngModel)]="psw1" name="password" id="p2" class="form-control mt-3 p-2 border font-variant-caps " type="password"
+        <input formControlName="psw1" name="password" id="p2" class="form-control mt-3 p-2 border font-variant-caps " type="password"
             placeholder="enter password">
     </div>
+
+    <div *ngIf="this.withdrawForm.get('psw1')?.errors && this.withdrawForm.get('psw1')?.touched" class="text-start ms-2 mt-2">
+        <p class="text-danger">includes numbers only</p>
+    </div>
+
     <div>
-        <input [(ngModel)]="amnt1" name=amnt id="a2" class="form-control mt-3 p-2 border font-variant-caps" type="text"
+        <input formControlName="amnt1" name=amnt id="a2" class="form-control mt-3 p-2 border font-variant-caps" type="text"
             placeholder="amount">
     </div>
 
+    <div *ngIf="this.withdrawForm.get('amnt1')?.errors && this.withdrawForm.get('amnt1')?.touched" class="text-start ms-2 mt-2">
+        <p class="text-danger">includes numbers only</p>
+    </div>
 
     <div class="d-grid col-5 mt-3 mx-auto">
         <button (click)="withdraw()" class="btn btn-primary" type="button">withdraw</button>

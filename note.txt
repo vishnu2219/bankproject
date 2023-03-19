@@ -155,9 +155,9 @@ used to manipulate DOM (documnet object model)
     eg - creating new component
 
 2 - structural directives
-    - *ngFor
+    - *ngFor - creating loop in html file
     eg - array,object (taking datas from array to the component)
-
+    -*ngIf - condition on html file
 3 -     
 
 Form Validation In Angular
@@ -185,6 +185,10 @@ a model containing
     -array
     -controller
 
+local storage in Angular            16.3.23
+------------------------
 
-
-
+C - localStorage.setItem() 
+R - localStorage.getItem()
+U - localStorage.setItem()
+D - localStorage.removeItem()

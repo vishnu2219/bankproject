@@ -18,10 +18,10 @@ import { TransactionComponent } from './transaction/transaction.component';
     TransactionComponent,
   ],
   imports: [
-    BrowserModule, // module used for browsing 
-    AppRoutingModule,  //redirection
-    FormsModule, // used for two way binding its external module
-    ReactiveFormsModule //form validation
+    BrowserModule,                                     // module used for browsing 
+    AppRoutingModule,                                 //redirection
+    FormsModule,                                     // used for two way binding its external module
+    ReactiveFormsModule                             //form validation
   ],
   providers: [],
   bootstrap: [AppComponent]
